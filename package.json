@@ -1,0 +1,32 @@
+{
+  "name": "webhook-ninja",
+  "version": "0.0.1",
+  "description": "Yet Another HTTP Request and Webhook Inspector",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akrn/webhook-ninja.git"
+  },
+  "author": "Andrey D. Korin",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/akrn/webhook-ninja/issues"
+  },
+  "homepage": "https://github.com/akrn/webhook-ninja#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12"
+  }
+}

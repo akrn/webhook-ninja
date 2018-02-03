@@ -4,11 +4,20 @@ const utils = require('../utils');
 
 
 const COLLECTIONS = {
-  Endpoints: 'endpoints'
+  Endpoints: 'endpoints',
   /*
     {
       uniqueId: string,
-      createdAt: datetime
+      createdAt: datetime,
+      requestsCount: number
+    }
+  */
+  Requests: 'requests',
+  /*
+    {
+      _endpointId,
+      createdAt: datetime,
+      headers: []
     }
   */
 };
@@ -37,7 +46,8 @@ class DB {
 
     let endpoint = {
       createdAt: new Date(),
-      uniqueId: null
+      uniqueId: null,
+      requestsCount: 0
     };
 
     let retry = 0;
@@ -52,13 +62,33 @@ class DB {
       throw new Error(`Unable to generate unique endpoint ID after ${UNIQUE_ID_RETRIES} attempts`);
     }
 
-    let result = await db.collection(COLLECTIONS.Endpoints).insertOne(endpoint);
+    await collection.insertOne(endpoint);
 
     return endpoint;
   }
 
   async getEndpoint(uniqueId) {
     return await db.collection(COLLECTIONS.Endpoints).findOne({ uniqueId });
+  }
+
+  async createRequest(endpoint, headers) {
+    let request = {
+      _endpointId: endpoint._id,
+      createdAt: new Date(),
+      headers: headers
+    };
+
+    let result = await db.collection(COLLECTIONS.Requests).insertOne(request);
+
+    if (result.insertedId) {
+      await db.collection(COLLECTIONS.Endpoints).updateOne({ _id: endpoint._id }, { $inc: { requestsCount: 1 } });
+    }
+
+    return request;
+  }
+
+  async getEndpointRequests(endpoint) {
+    return await db.collection(COLLECTIONS.Requests).find({ _endpointId: endpoint._id });
   }
 }
 

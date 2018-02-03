@@ -1,24 +1,20 @@
 const express = require('express');
-const winston = require('winston');
 const router = express.Router();
-const asyncMiddleware = require('../utils/asyncMiddleware');
 
+const apiMiddleware = require('../utils/apiMiddleware');
 const DB = require('../db');
 
 
-router.get('/:id', asyncMiddleware(async (req, res, next) => {
-  let endpoint;
-
-  try {
-    endpoint = await DB.getEndpoint(req.params.id);
-  } catch (err) {
-    winston.error(err);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
+router.get('/:id', apiMiddleware(async (req, res, next) => {
+  let endpoint = await DB.getEndpoint(req.params.id);
 
   if (!endpoint) {
-    return res.status(404).send();
+    return res.sendNotFoundError();
   }
+
+  let headersArray = Object.keys(req.headers).map(key => [key, req.headers[key]].join(': '));
+
+  await DB.createRequest(endpoint, headersArray);
 
   return res.json({
     ok: 1

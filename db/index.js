@@ -17,7 +17,9 @@ const COLLECTIONS = {
     {
       _endpointId,
       createdAt: datetime,
-      headers: []
+      method: string
+      headers: [string],
+      query: object
     }
   */
 };
@@ -71,11 +73,13 @@ class DB {
     return await db.collection(COLLECTIONS.Endpoints).findOne({ uniqueId });
   }
 
-  async createRequest(endpoint, headers) {
+  async createRequest(endpoint, method, query, headers) {
     let request = {
       _endpointId: endpoint._id,
       createdAt: new Date(),
-      headers: headers
+      method,
+      headers,
+      query
     };
 
     let result = await db.collection(COLLECTIONS.Requests).insertOne(request);
@@ -88,7 +92,7 @@ class DB {
   }
 
   async getEndpointRequests(endpoint) {
-    return await db.collection(COLLECTIONS.Requests).find({ _endpointId: endpoint._id });
+    return await db.collection(COLLECTIONS.Requests).find({ _endpointId: endpoint._id }).toArray();
   }
 }
 

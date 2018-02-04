@@ -34,11 +34,12 @@ router.get('/endpoints/:id/requests', apiMiddleware(async (req, res, next) => {
     return res.sendNotFoundError();
   }
 
-  // TODO: instead use a cursor
-  let requests = await (await DB.getEndpointRequests(endpoint)).toArray();
+  let requests = await DB.getEndpointRequests(endpoint);
 
   requests = requests.map(request => ({
     createdAt: request.createdAt,
+    method: request.method,
+    query: request.query,
     headers: request.headers
   }));
 

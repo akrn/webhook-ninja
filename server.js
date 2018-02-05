@@ -3,12 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const winston = require('winston');
 
-const DB = require('./db');
+const DB = require('./utils/db');
 
 
 const app = express();
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3000);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const apiMiddleware = require('../utils/apiMiddleware');
-const DB = require('../db');
+const DB = require('../utils/db');
 
 
 router.all('/:id', apiMiddleware(async (req, res, next) => {

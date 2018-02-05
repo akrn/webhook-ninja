@@ -1,6 +1,6 @@
 {
   "name": "webhook-ninja",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Yet Another HTTP Request and Webhook Inspector",
   "private": true,
   "main": "server.js",

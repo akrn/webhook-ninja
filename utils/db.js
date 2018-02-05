@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const utils = require('../utils');
+const utils = require('.');
 
 
 const COLLECTIONS = {

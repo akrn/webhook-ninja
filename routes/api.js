@@ -3,7 +3,7 @@ const winston = require('winston');
 const router = express.Router();
 
 const apiMiddleware = require('../utils/apiMiddleware');
-const DB = require('../db');
+const DB = require('../utils/db');
 
 
 router.post('/endpoints', apiMiddleware(async (req, res, next) => {

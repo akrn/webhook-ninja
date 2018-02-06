@@ -29,3 +29,6 @@ DB.connect().then(() => {
   winston.error(err);
   return process.exit(1);
 });
+
+
+module.exports = app;

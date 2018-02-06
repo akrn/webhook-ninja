@@ -1,9 +1,16 @@
 const express = require('express');
 const winston = require('winston');
+const cors = require('cors');
 const router = express.Router();
 
 const apiMiddleware = require('../utils/apiMiddleware');
 const DB = require('../utils/db');
+
+
+if (process.env.NODE_ENV !== 'production') {
+  // Enable CORS headers for non-production environments
+  router.use(cors());
+}
 
 
 router.post('/endpoints', apiMiddleware(async (req, res, next) => {

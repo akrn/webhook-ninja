@@ -1,11 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const router = express.Router();
 
 const apiMiddleware = require('../utils/apiMiddleware');
 const DB = require('../utils/db');
 
 
-router.all('/:id', apiMiddleware(async (req, res, next) => {
+router.all('/:id', cors(), apiMiddleware(async (req, res, next) => {
   let endpoint = await DB.getEndpoint(req.params.id);
 
   if (!endpoint) {

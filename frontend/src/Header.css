@@ -1,0 +1,65 @@
+.App-header {
+  padding-top: 15px;
+
+  background: #314055;
+  color: #FFF;
+}
+
+.App-header-landing {
+  padding-bottom: 40px;
+}
+
+.App-header-logo {
+  display: inline-block;
+  width: 1.5em; height: 1.85em;
+  vertical-align: middle;
+  background: url('./images/ninja.svg');
+  background-position: center;
+  background-size: cover;
+}
+
+.App-header h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.App-header h2 {
+  margin: 25px 0;
+
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.App-header p {
+  margin: 35px auto;
+
+  font-size: 1.2em;
+  line-height: 1.2em;
+
+  width: 75%;
+  max-width: 500px;
+}
+
+.App-header .App-header-button {
+  border: 1px solid #34783f;
+  background: #2a9f3f;
+  background-image: -webkit-linear-gradient(#3bbe4f 2%, #38ab47 3%, #2a9f3f 95%, #27983c 0);
+  background-image: linear-gradient(#3bbe4f 2%, #38ab47 3%, #2a9f3f 95%, #27983c 0);
+
+  padding: 0.5rem 2rem;
+
+  text-shadow: 1px 1px 1px #777;
+  color: #FFF;
+}
+
+.App-header .App-header-button:active {
+  border-color: #0e5c1a;
+  background: #199429;
+  background-image: -webkit-linear-gradient(#116d1a, #1b972b 5%, #199429 98%, #199429 0);
+  background-image: linear-gradient(#116d1a, #1b972b 5%, #199429 98%, #199429 0);
+}
+
+.App-header .App-header-button:focus {
+  -webkit-box-shadow: 0 0 0 0.2em rgba(52,208,88,0.25);
+  box-shadow: 0 0 0 0.2em rgba(52,208,88,0.25);
+}

@@ -1,0 +1,24 @@
+.App-ViewPage-url-label {
+  display: block;
+}
+
+.App-ViewPage-url-input[readonly] {
+  background-color: #FFF;
+}
+
+.App-ViewPage-RequestContainer-empty {
+  height: 75vh;
+}
+
+.App-ViewPage-RequestContainer-empty p {
+  font-size: 1.5rem;
+  color: #8B867E;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #FFF;
+}
+
+.App-ViewPage-RequestContainer-item-active {
+  margin: 15px 0;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+}

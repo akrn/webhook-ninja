@@ -1,0 +1,13 @@
+body {
+  /*background: #FFF7ED;*/
+  background: #FFFBF6;
+  color: #2C2214;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  background: #FFFBF6;
+  color: #2C2214;
+}
+

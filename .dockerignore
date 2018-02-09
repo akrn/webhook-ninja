@@ -1,3 +1,9 @@
+data
+
 .git
 .gitignore
 node_modules
+
+frontend/.gitignore
+frontend/node_modules
+frontend/build

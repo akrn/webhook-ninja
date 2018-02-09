@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
 
-import './index.scss';
 import App from './App';
 import { getBackendURL } from './utils/config';
 import registerServiceWorker from './registerServiceWorker';

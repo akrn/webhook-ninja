@@ -1,0 +1,16 @@
+.App-IndexPage {}
+
+.App-IndexPage-feature-header {
+  font-size: 9rem;
+  line-height: 10rem;
+  font-weight: bold;
+  opacity: 0.15;
+  text-align: center;
+}
+
+.App-IndexPage-feature-text {
+  font-size: 1rem;
+  opacity: 0.65;
+  text-align: center;
+  font-weight: bold;
+}

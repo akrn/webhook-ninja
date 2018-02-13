@@ -18,7 +18,16 @@
   text-shadow: 1px 1px 0 #FFF;
 }
 
+.App-ViewPage-RequestContainer-item {
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
 .App-ViewPage-RequestContainer-item-active {
   margin: 15px 0;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+}
+
+.App-ViewPage-RequestContainer-item .text-muted {
+  color: #8c959d !important;
 }

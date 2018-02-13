@@ -54,7 +54,7 @@ class DB {
 
     let retry = 0;
     while (retry++ < UNIQUE_ID_RETRIES) {
-      let uniqueId = utils.generateId();
+      let uniqueId = utils.generateSymbolicId();
       if (await collection.count({ uniqueId }) === 0) {
         endpoint.uniqueId = uniqueId;
       }
